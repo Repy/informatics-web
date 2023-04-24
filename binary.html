@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>バイナリ表示</title>
+</head>
+
+<body>
+    <div>
+        バイナリ表示
+    </div>
+    <div>
+        <input type="file" name="file" id="file">
+    </div>
+    <div id="output">
+
+    </div>
+    <script>
+        function binOutput(arr) {
+            let out = "";
+            for (let i = 0; i < arr.length; i++) {
+                let bytei = arr[i];
+                const i1 = (bytei & 0x80) > 0;
+                const i2 = (bytei & 0x40) > 0;
+                const i3 = (bytei & 0x20) > 0;
+                const i4 = (bytei & 0x10) > 0;
+                const i5 = (bytei & 0x08) > 0;
+                const i6 = (bytei & 0x04) > 0;
+                const i7 = (bytei & 0x02) > 0;
+                const i8 = (bytei & 0x01) > 0;
+                out +=
+                    (i1 ? "1" : "0") +
+                    (i2 ? "1" : "0") +
+                    (i3 ? "1" : "0") +
+                    (i4 ? "1" : "0") +
+                    (i5 ? "1" : "0") +
+                    (i6 ? "1" : "0") +
+                    (i7 ? "1" : "0") +
+                    (i8 ? "1" : "0") + " ";
+            }
+            return out;
+        }
+
+        const file = document.getElementById("file");
+        const output = document.getElementById("output");
+        file.addEventListener(
+            "change",
+            () => {
+                const fr = new FileReader();
+                fr.onload = () => {
+                    output.textContent = binOutput(new Uint8Array(fr.result));
+                };
+                fr.readAsArrayBuffer(file.files[0]);
+            },
+            false
+        );
+
+    </script>
+</body>
+
+</html>
