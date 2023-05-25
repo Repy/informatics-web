@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カラー作成</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #area {
+            width: 100px;
+            height: 100px;
+        }
+        input[type="range"] {
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>カラー作成</h1>
+    </div>
+    <div>
+        <div id="area">
+
+        </div>
+        R <input type="range" id="r" min="0" max="255"></input> <span id="rt"></span><br>
+        G <input type="range" id="g" min="0" max="255"></input> <span id="gt"></span><br>
+        B <input type="range" id="b" min="0" max="255"></input> <span id="bt"></span><br>
+    </div>
+    <div id="output">
+
+    </div>
+    <script>
+        function binOutput(arr) {
+            return out;
+        }
+
+        const area = document.getElementById("area");
+        const r = document.getElementById("r");
+        const g = document.getElementById("g");
+        const b = document.getElementById("b");
+        const rt = document.getElementById("rt");
+        const gt = document.getElementById("gt");
+        const bt = document.getElementById("bt");
+
+        r.value = 0;
+        g.value = 0;
+        b.value = 0;
+
+        function change(rgb, rgbt) {
+            return () => {
+                rgbt.textContent = rgb.value;
+                const text = "rgb(" + r.value + "," + g.value + "," + b.value + ")";
+                area.style.backgroundColor = text;
+            }
+        }
+
+        r.addEventListener("change", change(r, rt), false);
+        g.addEventListener("change", change(g, gt), false);
+        b.addEventListener("change", change(b, bt), false);
+        r.addEventListener("input", change(r, rt), false);
+        g.addEventListener("input", change(g, gt), false);
+        b.addEventListener("input", change(b, bt), false);
+        change(r, rt)();
+        change(g, gt)();
+        change(b, bt)();
+    </script>
+</body>
+
+</html>
