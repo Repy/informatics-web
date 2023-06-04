@@ -25,44 +25,65 @@
             width: 100%;
             height: 100%;
         }
+        
+        #button {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            right: 5px;
+            top: 5px;
+        }
     </style>
 </head>
 
 <body>
     <div id="blocklyDiv"></div>
-    <button type="button" id="" title="実行">実行</button>
+    <button type="button" id="button" title="実行">実行</button>
 
     <script>
         var toolbox = {
-            "kind": "flyoutToolbox",
+            "kind": "categoryToolbox",
             "contents": [
                 {
-                    "kind": "block",
-                    "type": "controls_if"
+                    "kind": "category",
+                    "name": "一般",
+                    "categorystyle": "logic_category",
+                    "contents": [
+                        {
+                            "kind": "block",
+                            "type": "controls_if"
+                        },
+                        {
+                            "kind": "block",
+                            "type": "logic_compare"
+                        },
+                        {
+                            "kind": "block",
+                            "type": "controls_whileUntil"
+                        },
+                        {
+                            "kind": "block",
+                            "type": "math_number"
+                        },
+                        {
+                            "kind": "block",
+                            "type": "math_arithmetic"
+                        },
+                        {
+                            "kind": "block",
+                            "type": "text"
+                        },
+                        {
+                            "kind": "block",
+                            "type": "text_print"
+                        },
+                    ]
                 },
                 {
-                    "kind": "block",
-                    "type": "controls_repeat_ext"
-                },
-                {
-                    "kind": "block",
-                    "type": "logic_compare"
-                },
-                {
-                    "kind": "block",
-                    "type": "math_number"
-                },
-                {
-                    "kind": "block",
-                    "type": "math_arithmetic"
-                },
-                {
-                    "kind": "block",
-                    "type": "text"
-                },
-                {
-                    "kind": "block",
-                    "type": "text_print"
+                    "kind": "category",
+                    "name": "変数",
+                    "categorystyle": "variable_category",
+                    "custom": "VARIABLE"
                 },
             ]
         }
