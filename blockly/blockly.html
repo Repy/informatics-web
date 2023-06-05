@@ -22,26 +22,64 @@
         }
 
         #blocklyDiv {
-            width: 100%;
-            height: 100%;
-        }
-        
-        #button {
             position: absolute;
-            width: 50px;
-            height: 50px;
-            right: 5px;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 200px;
+        }
+
+        #side {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            width: 200px;
+            right: 0px;
+            background-color: #ddd;
+        }
+
+        #execute {
+            position: absolute;
+            box-sizing: border-box;
             top: 5px;
+            left: 5px;
+            right: 100px;
+            height: 40px;
+        }
+
+        #stop {
+            position: absolute;
+            box-sizing: border-box;
+            top: 5px;
+            left: 100px;
+            right: 5px;
+            height: 40px;
+        }
+
+        #output {
+            position: absolute;
+            box-sizing: border-box;
+            border: 1px solid #333;
+            background-color: white;
+            overflow-y: scroll;
+            top: 50px;
+            left: 5px;
+            right: 5px;
+            bottom: 5px;
         }
     </style>
 </head>
 
 <body>
     <div id="blocklyDiv"></div>
-    <button type="button" id="button" title="実行">実行</button>
+    <div id="side">
+        <button type="button" id="execute" title="実行">実行</button>
+        <button type="button" id="stop" title="停止">停止</button>
+        <textarea id="output"></textarea>
+    </div>
 
     <script>
-        var toolbox = {
+        const toolbox = {
             "kind": "categoryToolbox",
             "contents": [
                 {
@@ -86,11 +124,73 @@
                     "custom": "VARIABLE"
                 },
             ]
-        }
-        var workspace = Blockly.inject('blocklyDiv', {
+        };
+
+        const workspace = Blockly.inject('blocklyDiv', {
             toolbox: toolbox,
         });
+        Blockly.JavaScript["text_print"] = (block) => {
+            const msg = Blockly.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_NONE) || "''";
+            return 'console.log(' + msg + ');\n';
+        };
 
+        const output = document.getElementById("output");
+        let outputData = "";
+        window.console2 = (msg) => {
+            outputData += msg + "\n";
+            output.value = outputData;
+        };
+
+        const stopButton = document.getElementById("stop");
+        window.isStop = false;
+        window.checkStop = () => {
+            if (window.isStop)
+                throw "停止しました";
+        };
+        stopButton.addEventListener("click", () => {
+            window.isStop = true;
+        }, false);
+
+        window.highlightBlock = (id) => {
+            workspace.highlightBlock(id);
+        };
+
+        window.sleep = (msec) => {
+            return new Promise((resolve, reject) => {
+                if (msec) {
+                    setTimeout(() => {
+                        resolve();
+                    }, msec);
+                } else {
+                    reject("invalid msec.");
+                }
+            });
+        };
+
+        const executeButton = document.getElementById("execute");
+        executeButton.addEventListener("click", () => {
+            // 予約語追加
+            Blockly.JavaScript.addReservedWords('highlightBlock');
+            Blockly.JavaScript.addReservedWords('checkStop');
+            Blockly.JavaScript.addReservedWords('sleep');
+            Blockly.JavaScript.addReservedWords('console2');
+
+            Blockly.JavaScript.STATEMENT_PREFIX = "window.checkStop();\nawait window.sleep(500);\nhighlightBlock(%1);\n";
+            var code = Blockly.JavaScript.workspaceToCode(workspace);
+            code = code.replace(/console\.log\(/g, 'window.console2(');
+            
+            execute(code);
+        }, false);
+
+        const execute = async (code) => {
+            try {
+                window.isStop = false;
+                highlightBlock();
+                await eval("(async ()=>{"+code+"})();");
+            } catch (e) {
+                alert(e);
+            }
+        };
     </script>
 </body>
 
