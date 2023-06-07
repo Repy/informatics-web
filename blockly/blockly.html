@@ -6,11 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blockly</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/blockly/9.3.3/blockly_compressed.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/blockly/9.3.3/blocks_compressed.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/blockly/9.3.3/javascript_compressed.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/blockly/9.3.3/msg/ja.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../blockly-toolkit/blocklyToolkit.js"></script>
 
     <style>
         html,
@@ -146,102 +142,30 @@
             ]
         };
 
-        const workspace = Blockly.inject('blocklyDiv', {
-            toolbox: toolbox,
-        });
-        Blockly.JavaScript["text_print"] = (block) => {
-            const msg = Blockly.JavaScript.valueToCode(block, 'TEXT', Blockly.JavaScript.ORDER_NONE) || "''";
-            return 'console.log(' + msg + ');\n';
-        };
-
+        const toolkit = new BlocklyToolkit('blocklyDiv', toolbox);
         const output = document.getElementById("output");
-        let outputData = "";
-        window.console2 = (msg) => {
-            outputData += msg + "\n";
-            output.value = outputData;
-        };
+        toolkit.setOutput(output);
 
-        const stopButton = document.getElementById("stop");
-        window.isStop = false;
-        window.checkStop = () => {
-            if (window.isStop)
-                throw "停止しました";
-        };
-        stopButton.addEventListener("click", () => {
-            window.isStop = true;
+
+        document.getElementById("stop").addEventListener("click", () => {
+            toolkit.stop();
         }, false);
 
-        window.highlightBlock = (id) => {
-            workspace.highlightBlock(id);
-        };
-
-        window.sleep = (msec) => {
-            return new Promise((resolve, reject) => {
-                if (msec) {
-                    setTimeout(() => {
-                        resolve();
-                    }, msec);
-                } else {
-                    reject("invalid msec.");
-                }
-            });
-        };
-
-        const executeButton = document.getElementById("execute");
-        executeButton.addEventListener("click", () => {
-            // 予約語追加
-            Blockly.JavaScript.addReservedWords('highlightBlock');
-            Blockly.JavaScript.addReservedWords('checkStop');
-            Blockly.JavaScript.addReservedWords('sleep');
-            Blockly.JavaScript.addReservedWords('console2');
-
-            Blockly.JavaScript.STATEMENT_PREFIX = "window.checkStop();\nawait window.sleep(500);\nhighlightBlock(%1);\n";
-            var code = Blockly.JavaScript.workspaceToCode(workspace);
-            code = code.replace(/console\.log\(/g, 'window.console2(');
-
-            execute(code);
+        document.getElementById("stop").addEventListener("click", () => {
+            toolkit.stop();
         }, false);
 
-        const execute = async (code) => {
-            try {
-                window.isStop = false;
-                highlightBlock();
-                await eval("(async ()=>{" + code + "})();");
-            } catch (e) {
-                alert(e);
-            }
-        };
+        document.getElementById("execute").addEventListener("click", () => {
+            toolkit.run();
+        }, false);
 
-        const options = {
-            types: [
-                {
-                    description: "JSON",
-                    accept: {
-                        "application/json": [".json"],
-                    },
-                },
-            ],
-        };
+        document.getElementById("save").addEventListener("click", () => {
+            toolkit.save()
+        }, false);
 
-        const saveButton = document.getElementById("save");
-        const save = async () => {
-            const text = JSON.stringify(Blockly.serialization.workspaces.save(workspace));
-            const handle = await window.showSaveFilePicker(options);
-            const writable = await handle.createWritable();
-            await writable.write(text);
-            await writable.close();
-        };
-        saveButton.addEventListener("click", () => { save() }, false);
-
-
-        const loadButton = document.getElementById("load");
-        const load = async () => {
-            const handle = await window.showOpenFilePicker(options);
-            const file = await handle[0].getFile();
-            const text = JSON.parse(await file.text());
-            Blockly.serialization.workspaces.load(text, workspace);
-        };
-        loadButton.addEventListener("click", () => { load() }, false);
+        document.getElementById("load").addEventListener("click", () => {
+            toolkit.load()
+        }, false);
 
     </script>
 </body>

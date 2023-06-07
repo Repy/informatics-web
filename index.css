@@ -1,5 +1,17 @@
+@font-face {
+    font-family: "Local BIZ UDPGothic";
+    src: local("BIZ UDPGothic");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Local BIZ UDPGothic";
+    src: local("BIZ UDPGothic Bold");
+    font-weight: 700;
+}
+
 * {
-    font-family: "BIZ UDPGothic";
+    font-family: "Local BIZ UDPGothic", "BIZ UDPGothic";
     font-style: normal;
     font-weight: 400;
     font-size: 16px;

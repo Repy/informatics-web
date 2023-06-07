@@ -1,6 +1,7 @@
-/// <reference path="./blockly.d.ts" />
-
-import { WorkspaceSvg } from "blockly";
+import Blockly from "blockly";
+import 'blockly/blocks';
+import {javascriptGenerator} from 'blockly/javascript';
+import * as JA from 'blockly/msg/ja';
 
 const options = {
     types: [
@@ -13,17 +14,17 @@ const options = {
     ],
 };
 
-class BlocklyToolkit {
-    private workspace: WorkspaceSvg;
+export default class BlocklyToolkit {
+    private workspace: Blockly.WorkspaceSvg;
     constructor(divId: string, toolboxJson: any) {
-        this.workspace = Blockly.inject('blocklyDiv', {
+        this.workspace = Blockly.inject(divId, {
             toolbox: toolboxJson,
         });
-        Blockly.JavaScript.addReservedWords('highlightBlock');
-        Blockly.JavaScript.addReservedWords('checkStop');
-        Blockly.JavaScript.addReservedWords('sleep');
-        Blockly.JavaScript.addReservedWords('console2');
-
+        javascriptGenerator.addReservedWords('highlightBlock');
+        javascriptGenerator.addReservedWords('checkStop');
+        javascriptGenerator.addReservedWords('sleep');
+        javascriptGenerator.addReservedWords('console2');
+        Blockly.setLocale(JA);
 
     }
     private highlightBlock(id: string | null) {
@@ -57,9 +58,9 @@ class BlocklyToolkit {
             return this.console(msg);
         }
         try {
-            Blockly.JavaScript.STATEMENT_PREFIX = "checkStop();\nawait sleep();\nhighlightBlock(%1);\n";
-            var code = Blockly.JavaScript.workspaceToCode(this.workspace);
-            code = code.replace(/console\.log\(/g, 'consolelog(');
+            javascriptGenerator.STATEMENT_PREFIX = "checkStop();\nawait sleep();\nhighlightBlock(%1);\n";
+            var code = javascriptGenerator.workspaceToCode(this.workspace);
+            code = code.replace(/window\.alert\(/g, 'consolelog(');
             this.isStop = false;
             this.highlightBlock(null);
             await eval("(async ()=>{" + code + "})();");
@@ -94,7 +95,7 @@ class BlocklyToolkit {
         await writable.write(text);
         await writable.close();
     };
-    
+
     private async load() {
         const handle = await window.showOpenFilePicker(options);
         const file = await handle[0].getFile();
