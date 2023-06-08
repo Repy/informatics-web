@@ -1,0 +1,40 @@
+<mxfile host="app.diagrams.net" modified="2023-06-08T04:22:34.295Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.42" etag="DiqiRYEiIbsTzGM7vvWM" version="21.3.7" type="device">
+  <diagram name="ページ1" id="D5p3RVC4t98DR3PqROP9">
+    <mxGraphModel dx="1178" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="StKes1Bay4Hae8yV6QAt-1" value="開始" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="80" y="100" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="StKes1Bay4Hae8yV6QAt-2" value="終了" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="80" y="160" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="StKes1Bay4Hae8yV6QAt-3" value="&lt;div&gt;変数xに数値入力&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="200" y="100" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="StKes1Bay4Hae8yV6QAt-4" value="&lt;div&gt;変数xを３減らす&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="200" y="160" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="StKes1Bay4Hae8yV6QAt-5" value="&lt;div&gt;「割り切れる」と出力&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="200" y="220" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9aM1dBj8owvEj4xOFZrg-10" value="３で割り切れる数" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-2" value="&lt;div&gt;「割り切れない」と出力&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="200" y="280" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-4" value="&lt;div&gt;変数xが3以上&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.loop_limit;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="400" y="180" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-5" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.loop_limit;whiteSpace=wrap;direction=west;" parent="1" vertex="1">
+          <mxGeometry x="400" y="240" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-6" value="&lt;div&gt;変数x=0&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="400" y="100" width="160" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

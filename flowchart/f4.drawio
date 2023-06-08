@@ -1,0 +1,143 @@
+<mxfile host="app.diagrams.net" modified="2023-06-08T07:45:03.689Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.42" etag="raFIuEFMLX3hePHfTjbC" version="21.3.7" type="device">
+  <diagram name="ページ1" id="D5p3RVC4t98DR3PqROP9">
+    <mxGraphModel dx="1178" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="StKes1Bay4Hae8yV6QAt-1" value="開始" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;fontSize=14;fontFamily=BIZ UDPGothic;" parent="1" vertex="1">
+          <mxGeometry x="40" y="120" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="StKes1Bay4Hae8yV6QAt-2" value="終了" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;fontSize=14;fontFamily=BIZ UDPGothic;" parent="1" vertex="1">
+          <mxGeometry x="40" y="200" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="StKes1Bay4Hae8yV6QAt-3" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;変数xに入力する&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontSize=14;fontFamily=BIZ UDPGothic;" parent="1" vertex="1">
+          <mxGeometry x="160" y="120" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9aM1dBj8owvEj4xOFZrg-10" value="3のつく数" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontFamily=BIZ UDPGothic;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="480" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-4" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;変数x&amp;gt;0&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.loop_limit;whiteSpace=wrap;fontSize=14;fontFamily=BIZ UDPGothic;" vertex="1" parent="1">
+          <mxGeometry x="400" y="280" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-5" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.loop_limit;whiteSpace=wrap;direction=west;fontSize=14;fontFamily=BIZ UDPGothic;" vertex="1" parent="1">
+          <mxGeometry x="400" y="340" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-6" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;変数y=3&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;fontSize=14;fontFamily=BIZ UDPGothic;" vertex="1" parent="1">
+          <mxGeometry x="400" y="120" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-7" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;div&gt;変数yに、変数x÷10の余り&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontSize=14;fontFamily=BIZ UDPGothic;" vertex="1" parent="1">
+          <mxGeometry x="160" y="200" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-8" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;div&gt;変数xに、変数x-変数y&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontSize=14;fontFamily=BIZ UDPGothic;" vertex="1" parent="1">
+          <mxGeometry x="160" y="280" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-9" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;div&gt;変数xに、変数x÷10&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontSize=14;fontFamily=BIZ UDPGothic;" vertex="1" parent="1">
+          <mxGeometry x="160" y="360" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-10" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;「 ３のつく数です」と出力&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontSize=14;fontFamily=BIZ UDPGothic;" vertex="1" parent="1">
+          <mxGeometry x="160" y="440" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-11" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;「 ３のつく数ではない」と出力&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontSize=14;fontFamily=BIZ UDPGothic;" vertex="1" parent="1">
+          <mxGeometry x="160" y="520" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.47;entryY=0.1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="D7fSjAbkDVPHjdvhgrvn-12" target="D7fSjAbkDVPHjdvhgrvn-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-12" value="開始" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;fontSize=14;fontFamily=BIZ UDPGothic;" vertex="1" parent="1">
+          <mxGeometry x="799" y="30" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-13" value="終了" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;fontSize=14;fontFamily=BIZ UDPGothic;" vertex="1" parent="1">
+          <mxGeometry x="800" y="760" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="D7fSjAbkDVPHjdvhgrvn-14" target="D7fSjAbkDVPHjdvhgrvn-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-14" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;変数xに入力する&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontSize=14;fontFamily=BIZ UDPGothic;" vertex="1" parent="1">
+          <mxGeometry x="749" y="90" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="D7fSjAbkDVPHjdvhgrvn-15" target="D7fSjAbkDVPHjdvhgrvn-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-15" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;変数x&amp;gt;0&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.loop_limit;whiteSpace=wrap;fontSize=14;fontFamily=BIZ UDPGothic;" vertex="1" parent="1">
+          <mxGeometry x="769" y="150" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="D7fSjAbkDVPHjdvhgrvn-16" target="D7fSjAbkDVPHjdvhgrvn-24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="D7fSjAbkDVPHjdvhgrvn-16" target="D7fSjAbkDVPHjdvhgrvn-15">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1030" y="500" />
+              <mxPoint x="1030" y="170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-16" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.loop_limit;whiteSpace=wrap;direction=west;fontSize=14;fontFamily=BIZ UDPGothic;" vertex="1" parent="1">
+          <mxGeometry x="769" y="480" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="D7fSjAbkDVPHjdvhgrvn-17" target="D7fSjAbkDVPHjdvhgrvn-19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="D7fSjAbkDVPHjdvhgrvn-17" target="D7fSjAbkDVPHjdvhgrvn-24">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="850" y="550" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="710" y="300" />
+              <mxPoint x="710" y="540" />
+              <mxPoint x="850" y="540" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-17" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;変数y=3&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;fontSize=14;fontFamily=BIZ UDPGothic;" vertex="1" parent="1">
+          <mxGeometry x="769" y="270" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="D7fSjAbkDVPHjdvhgrvn-18" target="D7fSjAbkDVPHjdvhgrvn-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-18" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;div&gt;変数yに、変数x÷10の余り&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontSize=14;fontFamily=BIZ UDPGothic;" vertex="1" parent="1">
+          <mxGeometry x="749" y="210" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="D7fSjAbkDVPHjdvhgrvn-19" target="D7fSjAbkDVPHjdvhgrvn-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-19" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;div&gt;変数xに、変数x-変数y&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontSize=14;fontFamily=BIZ UDPGothic;" vertex="1" parent="1">
+          <mxGeometry x="749" y="344" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-31" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="D7fSjAbkDVPHjdvhgrvn-20" target="D7fSjAbkDVPHjdvhgrvn-16">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="989" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-20" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;&lt;div&gt;変数xに、変数x÷10&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontSize=14;fontFamily=BIZ UDPGothic;" vertex="1" parent="1">
+          <mxGeometry x="749" y="410" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="D7fSjAbkDVPHjdvhgrvn-21" target="D7fSjAbkDVPHjdvhgrvn-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-21" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;「 ３のつく数です」と出力&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontSize=14;fontFamily=BIZ UDPGothic;" vertex="1" parent="1">
+          <mxGeometry x="740" y="660" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="D7fSjAbkDVPHjdvhgrvn-22" target="D7fSjAbkDVPHjdvhgrvn-13">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="850" y="740" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-22" value="&lt;div style=&quot;&quot;&gt;&lt;div style=&quot;&quot;&gt;「 ３のつく数ではない」と出力&lt;/div&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontSize=14;fontFamily=BIZ UDPGothic;" vertex="1" parent="1">
+          <mxGeometry x="969" y="660" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-33" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.56;entryY=-0.017;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="D7fSjAbkDVPHjdvhgrvn-24" target="D7fSjAbkDVPHjdvhgrvn-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.465;entryY=-0.067;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="D7fSjAbkDVPHjdvhgrvn-24" target="D7fSjAbkDVPHjdvhgrvn-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-24" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;変数y=3&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;fontSize=14;fontFamily=BIZ UDPGothic;" vertex="1" parent="1">
+          <mxGeometry x="769" y="570" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="D7fSjAbkDVPHjdvhgrvn-39" value="&lt;div style=&quot;font-size: 14px;&quot;&gt;変数y=3&lt;/div&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;fontSize=14;fontFamily=BIZ UDPGothic;" vertex="1" parent="1">
+          <mxGeometry x="400" y="200" width="160" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
