@@ -100,21 +100,72 @@
             "contents": [
                 {
                     "kind": "category",
-                    "name": "一般",
+                    "name": "分岐・ループ",
                     "categorystyle": "logic_category",
                     "contents": [
                         {
                             "kind": "block",
-                            "type": "controls_if"
+                            "type": "logic_boolean",
+                            "fields": {
+                                "BOOL": "TRUE",
+                            }
                         },
                         {
                             "kind": "block",
                             "type": "logic_compare"
                         },
                         {
-                            "kind": "block",
-                            "type": "controls_whileUntil"
+                            "kind": "label",
+                            "text": "条件分岐"
                         },
+                        {
+                            "kind": "block",
+                            "type": "controls_if"
+                        },
+                        {
+                            "kind": "label",
+                            "text": "繰り返し"
+                        },
+                        {
+                            "kind": "block",
+                            "type": "controls_whileUntil",
+                        },
+                        {
+                            "kind": "label",
+                            "text": "永久繰り返し"
+                        },
+                        {
+                            "kind": "block",
+                            "type": "controls_whileUntil",
+                            "fields": {
+                                "MODE": "WHILE",
+                            },
+                            "inputs": {
+                                "BOOL": {
+                                    "block": {
+                                        "type": "logic_boolean",
+                                        "fields": {
+                                            "BOOL": "TRUE",
+                                        }
+                                    }
+                                },
+                            },
+                        },
+                        {
+                            "kind": "label",
+                            "text": "断ち切り"
+                        },
+                        {
+                            "kind": "block",
+                            "type": "controls_flow_statements"
+                        },
+                    ]
+                },
+                {
+                    "kind": "category",
+                    "name": "計算",
+                    "categorystyle": "math_category",
+                    "contents": [
                         {
                             "kind": "block",
                             "type": "math_number"
@@ -123,13 +174,27 @@
                             "kind": "block",
                             "type": "math_arithmetic"
                         },
+                    ]
+                },
+                {
+                    "kind": "category",
+                    "name": "入出力",
+                    "categorystyle": "math_category",
+                    "contents": [
                         {
                             "kind": "block",
-                            "type": "text"
+                            "type": "text_prompt_ext",
+                            "fields": {
+                                "TYPE": "NUMBER"
+                            },
                         },
                         {
                             "kind": "block",
                             "type": "text_print"
+                        },
+                        {
+                            "kind": "block",
+                            "type": "text"
                         },
                     ]
                 },
