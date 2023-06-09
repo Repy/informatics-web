@@ -1,38 +1,38 @@
-<mxfile host="app.diagrams.net" modified="2023-06-08T02:46:39.898Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.42" etag="nJtJpuOfVAbZApscoUkG" version="21.3.7" type="device">
+<mxfile host="app.diagrams.net" modified="2023-06-09T00:47:16.275Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.42" etag="CE4tcQ4ODtu4nD4ruSIm" version="21.3.7" type="device">
   <diagram name="ページ1" id="D5p3RVC4t98DR3PqROP9">
-    <mxGraphModel dx="1386" dy="925" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="1178" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="StKes1Bay4Hae8yV6QAt-11" value="おつり" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="StKes1Bay4Hae8yV6QAt-11" value="おつり" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontFamily=BIZ UDPGothic;fontSize=20;" parent="1" vertex="1">
           <mxGeometry x="40" y="40" width="160" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="9aM1dBj8owvEj4xOFZrg-1" value="開始" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="40" y="100" width="80" height="40" as="geometry" />
+        <mxCell id="9aM1dBj8owvEj4xOFZrg-1" value="開始" style="strokeWidth=2;shape=mxgraph.flowchart.terminator;fontFamily=BIZ UDPGothic;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="40" y="120" width="80" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="9aM1dBj8owvEj4xOFZrg-2" value="終了" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.terminator;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="40" y="160" width="80" height="40" as="geometry" />
+        <mxCell id="9aM1dBj8owvEj4xOFZrg-2" value="終了" style="strokeWidth=2;shape=mxgraph.flowchart.terminator;fontFamily=BIZ UDPGothic;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="40" y="170" width="80" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="9aM1dBj8owvEj4xOFZrg-3" value="&lt;p style=&quot;margin-top: 0pt; margin-bottom: 0pt; margin-left: 0in; direction: ltr; unicode-bidi: embed; word-break: normal;&quot;&gt;変数支払代金に入力する&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="140" y="160" width="200" height="40" as="geometry" />
+        <mxCell id="9aM1dBj8owvEj4xOFZrg-3" value="変数支払代金に入力する" style="rounded=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontFamily=BIZ UDPGothic;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="340" y="120" width="200" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="9aM1dBj8owvEj4xOFZrg-4" value="&lt;p style=&quot;margin-top: 0pt; margin-bottom: 0pt; margin-left: 0in; direction: ltr; unicode-bidi: embed; word-break: normal;&quot;&gt;「お釣りなし」と出力&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="140" y="220" width="200" height="40" as="geometry" />
+        <mxCell id="9aM1dBj8owvEj4xOFZrg-4" value="「お釣りなし」と出力" style="rounded=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontFamily=BIZ UDPGothic;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="130" y="170" width="200" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="9aM1dBj8owvEj4xOFZrg-5" value="&lt;p style=&quot;margin-top: 0pt; margin-bottom: 0pt; margin-left: 0in; direction: ltr; unicode-bidi: embed; word-break: normal;&quot;&gt;「代金不足」と出力&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="140" y="280" width="200" height="40" as="geometry" />
+        <mxCell id="9aM1dBj8owvEj4xOFZrg-5" value="「代金不足」と出力" style="rounded=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontFamily=BIZ UDPGothic;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="130" y="220" width="200" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="9aM1dBj8owvEj4xOFZrg-6" value="&lt;p style=&quot;margin-top: 0pt; margin-bottom: 0pt; margin-left: 0in; direction: ltr; unicode-bidi: embed; word-break: normal;&quot;&gt;変数購入総額に入力する&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="140" y="100" width="200" height="40" as="geometry" />
+        <mxCell id="9aM1dBj8owvEj4xOFZrg-6" value="変数購入総額に入力する" style="rounded=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontFamily=BIZ UDPGothic;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="130" y="120" width="200" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="9aM1dBj8owvEj4xOFZrg-7" value="&lt;p style=&quot;margin-top: 0pt; margin-bottom: 0pt; margin-left: 0in; direction: ltr; unicode-bidi: embed; word-break: normal;&quot;&gt;「おつり〇〇円」を計算して出力&lt;/p&gt;" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
-          <mxGeometry x="140" y="340" width="200" height="40" as="geometry" />
+        <mxCell id="9aM1dBj8owvEj4xOFZrg-7" value="「おつり〇〇円」を&#xa;計算して出力" style="rounded=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontFamily=BIZ UDPGothic;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="130" y="270" width="200" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="9aM1dBj8owvEj4xOFZrg-8" value="&lt;p style=&quot;margin-top: 0pt; margin-bottom: 0pt; margin-left: 0in; direction: ltr; unicode-bidi: embed; word-break: normal;&quot;&gt;購入総額=支払代金&lt;br&gt;&lt;/p&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="360" y="100" width="200" height="60" as="geometry" />
+        <mxCell id="9aM1dBj8owvEj4xOFZrg-8" value="購入総額=支払代金" style="strokeWidth=2;shape=mxgraph.flowchart.decision;fontFamily=BIZ UDPGothic;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="340" y="170" width="200" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="9aM1dBj8owvEj4xOFZrg-9" value="&lt;p style=&quot;margin-top: 0pt; margin-bottom: 0pt; margin-left: 0in; direction: ltr; unicode-bidi: embed; word-break: normal;&quot;&gt;購入総額&amp;gt;支払代金&lt;br&gt;&lt;/p&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="360" y="180" width="200" height="60" as="geometry" />
+        <mxCell id="9aM1dBj8owvEj4xOFZrg-9" value="購入総額&gt;支払代金" style="strokeWidth=2;shape=mxgraph.flowchart.decision;fontFamily=BIZ UDPGothic;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="340" y="240" width="200" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
