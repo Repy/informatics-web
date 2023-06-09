@@ -1,0 +1,31 @@
+<mxfile host="app.diagrams.net" modified="2023-06-09T01:45:01.904Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.42" etag="Nn-epYtNbdpEZcjDcvf2" version="21.3.8" type="device">
+  <diagram name="ページ1" id="D5p3RVC4t98DR3PqROP9">
+    <mxGraphModel dx="1178" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="StKes1Bay4Hae8yV6QAt-11" value="100までの数で3の倍数か3のつく数" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;fontFamily=BIZ UDPGothic;fontSize=20;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9aM1dBj8owvEj4xOFZrg-1" value="開始" style="strokeWidth=2;shape=mxgraph.flowchart.terminator;fontFamily=BIZ UDPGothic;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="40" y="120" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9aM1dBj8owvEj4xOFZrg-2" value="終了" style="strokeWidth=2;shape=mxgraph.flowchart.terminator;fontFamily=BIZ UDPGothic;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="40" y="170" width="80" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9aM1dBj8owvEj4xOFZrg-6" value="" style="rounded=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontFamily=BIZ UDPGothic;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="130" y="120" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="9aM1dBj8owvEj4xOFZrg-8" value="" style="strokeWidth=2;shape=mxgraph.flowchart.decision;fontFamily=BIZ UDPGothic;fontSize=16;" parent="1" vertex="1">
+          <mxGeometry x="550" y="120" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="myxYvTdd0CNpiL3Pw92d-3" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.loop_limit;whiteSpace=wrap;rounded=1;strokeColor=default;fontFamily=BIZ UDPGothic;fontSize=16;fontColor=default;fillColor=default;" vertex="1" parent="1">
+          <mxGeometry x="340" y="120" width="200" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="myxYvTdd0CNpiL3Pw92d-4" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.loop_limit;whiteSpace=wrap;rounded=1;strokeColor=default;fontFamily=BIZ UDPGothic;fontSize=16;fontColor=default;fillColor=default;direction=west;" vertex="1" parent="1">
+          <mxGeometry x="340" y="170" width="200" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
