@@ -1,18 +1,23 @@
 module.exports = [
     {
-        entry: './blockly-toolkit/blocklyToolkit.ts',
+        entry: './blockly-toolkit/index.ts',
+        resolve: {
+            extensions: ['.ts', '.js', '.css']
+        },
         module: {
             rules: [
                 { test: /\.ts$/, use: 'ts-loader' },
+                { test: /\.css$/, use: ["style-loader", "css-loader"] },
             ],
         },
+        devtool: 'source-map',
         output: {
             path: __dirname,
-            filename: "blockly-toolkit/blocklyToolkit.js",
+            filename: "blockly-toolkit/index.js",
             library:{
-                name: 'BlocklyToolkit',
+                name: 'BlocklyToolkitView',
                 type: 'var',
-                export: 'default',
+                export: 'BlocklyToolkitView',
             },
         },
     },

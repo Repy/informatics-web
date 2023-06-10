@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blockly</title>
-    <script src="../blockly-toolkit/blocklyToolkit.js"></script>
+    <script src="../blockly-toolkit/index.js"></script>
 
     <style>
         html,
@@ -16,86 +16,12 @@
             width: 100%;
             height: 100%;
         }
-
-        #blocklyDiv {
-            position: absolute;
-            top: 0px;
-            bottom: 0px;
-            left: 0px;
-            right: 200px;
-        }
-
-        #side {
-            position: absolute;
-            top: 0px;
-            bottom: 0px;
-            width: 200px;
-            right: 0px;
-            background-color: #ddd;
-        }
-
-        #execute {
-            position: absolute;
-            box-sizing: border-box;
-            top: 5px;
-            left: 5px;
-            right: 100px;
-            height: 40px;
-        }
-
-        #stop {
-            position: absolute;
-            box-sizing: border-box;
-            top: 5px;
-            left: 100px;
-            right: 5px;
-            height: 40px;
-        }
-
-        #output {
-            position: absolute;
-            box-sizing: border-box;
-            border: 1px solid #333;
-            background-color: white;
-            overflow-y: scroll;
-            top: 50px;
-            left: 5px;
-            right: 5px;
-            bottom: 50px;
-        }
-
-        #save {
-            position: absolute;
-            box-sizing: border-box;
-            bottom: 5px;
-            left: 5px;
-            right: 100px;
-            height: 40px;
-        }
-
-        #load {
-            position: absolute;
-            box-sizing: border-box;
-            bottom: 5px;
-            left: 100px;
-            right: 5px;
-            height: 40px;
-        }
     </style>
 </head>
 
 <body>
-    <div id="blocklyDiv"></div>
-    <div id="side">
-        <button type="button" id="execute">実行</button>
-        <button type="button" id="stop">停止</button>
-        <textarea id="output"></textarea>
-        <button type="button" id="save">保存</button>
-        <button type="button" id="load">読込</button>
-    </div>
-
     <script>
-        const toolbox = {
+        new BlocklyToolkitView(document.body, {
             "kind": "categoryToolbox",
             "contents": [
                 {
@@ -116,11 +42,29 @@
                         },
                         {
                             "kind": "label",
-                            "text": "条件分岐"
+                            "text": "分岐"
                         },
                         {
                             "kind": "block",
                             "type": "controls_if"
+                        },
+                    ]
+                },
+                {
+                    "kind": "category",
+                    "name": "繰り返し",
+                    "categorystyle": "loop_category",
+                    "contents": [
+                        {
+                            "kind": "block",
+                            "type": "logic_boolean",
+                            "fields": {
+                                "BOOL": "TRUE",
+                            }
+                        },
+                        {
+                            "kind": "block",
+                            "type": "logic_compare"
                         },
                         {
                             "kind": "label",
@@ -209,33 +153,7 @@
                     "custom": "VARIABLE"
                 },
             ]
-        };
-
-        const toolkit = new BlocklyToolkit('blocklyDiv', toolbox);
-        const output = document.getElementById("output");
-        toolkit.setOutput(output);
-
-
-        document.getElementById("stop").addEventListener("click", () => {
-            toolkit.stop();
-        }, false);
-
-        document.getElementById("stop").addEventListener("click", () => {
-            toolkit.stop();
-        }, false);
-
-        document.getElementById("execute").addEventListener("click", () => {
-            toolkit.run();
-        }, false);
-
-        document.getElementById("save").addEventListener("click", () => {
-            toolkit.save()
-        }, false);
-
-        document.getElementById("load").addEventListener("click", () => {
-            toolkit.load()
-        }, false);
-
+        });
     </script>
 </body>
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=BIZ+UDPGothic:400,700');
+
 @font-face {
     font-family: "Local BIZ UDPGothic";
     src: local("BIZ UDPGothic");
@@ -11,7 +13,7 @@
 }
 
 * {
-    font-family: "Local BIZ UDPGothic", "BIZ UDPGothic";
+    font-family: "Local BIZ UDPGothic", "BIZ UDPGothic", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;

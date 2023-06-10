@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=BIZ+UDPGothic:400,700');
+
+@font-face {
+    font-family: "Local BIZ UDPGothic";
+    src: local("BIZ UDPGothic");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Local BIZ UDPGothic";
+    src: local("BIZ UDPGothic Bold");
+    font-weight: 700;
+}
+
+.BlocklyToolkitView {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.BlocklyToolkitView * {
+    font-family: "Local BIZ UDPGothic", "BIZ UDPGothic", sans-serif !important;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.BlocklyToolkitViewBlockly {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 200px;
+}
+
+.BlocklyToolkitViewSide {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 200px;
+    right: 0px;
+    background-color: #ddd;
+}
+
+.BlocklyToolkitViewSideSpeed {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    height: 35px;
+    background-color: aqua;
+    font-size: 16px;
+}
+
+.BlocklyToolkitViewSideSpeedInput {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 15px;
+}
+
+.BlocklyToolkitViewSideRun {
+    position: absolute;
+    box-sizing: border-box;
+    top: 45px;
+    left: 5px;
+    right: 100px;
+    height: 40px;
+}
+
+.BlocklyToolkitViewSideStop {
+    position: absolute;
+    box-sizing: border-box;
+    top: 45px;
+    left: 100px;
+    right: 5px;
+    height: 40px;
+}
+
+.BlocklyToolkitViewSideOutput {
+    position: absolute;
+    box-sizing: border-box;
+    border: 1px solid #333;
+    background-color: white;
+    overflow-y: scroll;
+    top: 90px;
+    left: 5px;
+    right: 5px;
+    bottom: 50px;
+}
+
+.BlocklyToolkitViewSideSave {
+    position: absolute;
+    box-sizing: border-box;
+    bottom: 5px;
+    left: 5px;
+    right: 100px;
+    height: 40px;
+}
+
+.BlocklyToolkitViewSideLoad {
+    position: absolute;
+    box-sizing: border-box;
+    bottom: 5px;
+    left: 100px;
+    right: 5px;
+    height: 40px;
+}
