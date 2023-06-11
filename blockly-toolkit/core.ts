@@ -2,6 +2,7 @@ import Blockly from "blockly";
 import { } from 'blockly/blocks';
 import { javascriptGenerator } from 'blockly/javascript';
 import * as JA from 'blockly/msg/ja';
+import { Interpreter } from "./interpreter/interpreter";
 
 const options = {
     types: [
@@ -24,6 +25,14 @@ interface BlocklyToolkitEventListener<K extends keyof BlocklyToolkitEventMap> {
     listener: (this: BlocklyToolkit, ev: BlocklyToolkitEventMap[K]) => void;
 }
 
+async function sleep(sleepTime: number) {
+    return new Promise<void>((resolve) => {
+        setTimeout(() => {
+            resolve();
+        }, sleepTime);
+    });
+};
+
 export class BlocklyToolkit {
     private workspace: Blockly.WorkspaceSvg;
     constructor(view: Element | string, toolboxJson: any, theme: Blockly.Theme) {
@@ -32,9 +41,6 @@ export class BlocklyToolkit {
             theme: theme,
         });
         javascriptGenerator.addReservedWords('highlightBlock');
-        javascriptGenerator.addReservedWords('checkStop');
-        javascriptGenerator.addReservedWords('sleep');
-        javascriptGenerator.addReservedWords('console2');
         Blockly.setLocale(JA);
 
     }
@@ -63,35 +69,57 @@ export class BlocklyToolkit {
         this.sleepTime = sleepTime;
     }
 
-    public getCode(statementPrefix: string) {
+    public getCode(statementPrefix: string): string {
         javascriptGenerator.STATEMENT_PREFIX = statementPrefix;
         return javascriptGenerator.workspaceToCode(this.workspace);
     }
 
     public async run() {
         if (this.isRunnning) return;
-        const sleep = () => {
-            return this.sleep();
-        };
-        const highlightBlock = (id: string) => {
-            this.highlightBlock(id);
-        };
-        const consolelog = (msg: string) => {
-            this.dispatchEvent("console", msg);
-        };
-        var code = this.getCode("await sleep();\nhighlightBlock(%1);\n");
-        code = code.replace(/window\.alert\(/g, 'consolelog(');
+        var code = this.getCode("highlightBlock(%1);\n");
+        let pause = false;
+        const myInterpreter = new Interpreter(code, (interpreter: any, globalObject: Window) => {
+            const wrapperAlert = (msg: string) => {
+                this.dispatchEvent("console", msg);
+            };
+            interpreter.setProperty(globalObject, 'alert', interpreter.createNativeFunction(wrapperAlert));
+
+            const wrapperPrompt = (msg: string) => {
+                return window.prompt(msg);
+            };
+            interpreter.setProperty(globalObject, 'prompt', interpreter.createNativeFunction(wrapperPrompt));
+
+            // Add an API function for highlighting blocks.
+            const wrapperHighlight = (id: string) => {
+                this.highlightBlock(id);
+                pause = true;
+            };
+            interpreter.setProperty(globalObject, 'highlightBlock', interpreter.createNativeFunction(wrapperHighlight));
+        });
         this.highlightBlock(null);
         this.isRunnning = true;
         this.dispatchEvent("changestate", "runnning");
-        consolelog("実行開始");
+        this.dispatchEvent("console", "実行開始");
         try {
-            await eval("(async ()=>{" + code + "})();");
-            await sleep();
+            while (true) {
+                const next = myInterpreter.step();
+                if (!next) {
+                    break;
+                }
+                if (pause) {
+                    pause = false;
+                    await this.sleep();
+                    if (!this.isRunnning) {
+                        this.dispatchEvent("console", "強制終了");
+                        break;
+                    }
+                }
+            }
+            await this.sleep();
         } catch (e) {
             alert(e);
         }
-        consolelog("実行終了");
+        this.dispatchEvent("console", "実行終了");
         this.highlightBlock(null);
         this.isRunnning = false;
         this.dispatchEvent("changestate", "stopped");
@@ -103,15 +131,7 @@ export class BlocklyToolkit {
     }
 
     private sleep() {
-        return new Promise<void>((resolve, reject) => {
-            setTimeout(() => {
-                if (!this.isRunnning) {
-                    reject("停止しました");
-                } else {
-                    resolve();
-                }
-            }, this.sleepTime);
-        });
+        return sleep(this.sleepTime);
     };
 
     public async save() {

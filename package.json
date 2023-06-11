@@ -1,8 +1,6 @@
 {
   "devDependencies": {
-    "@blockly/theme-highcontrast": "^3.0.10",
     "@types/wicg-file-system-access": "^2020.9.6",
-    "blockly": "^9.3.3",
     "css-loader": "^6.8.1",
     "raw-loader": "^4.0.2",
     "style-loader": "^3.3.3",
@@ -14,5 +12,9 @@
   "scripts": {
     "build": "npx webpack-cli build"
   },
-  "browser": []
+  "browser": [],
+  "dependencies": {
+    "@blockly/theme-highcontrast": "^3.0.10",
+    "blockly": "^9.3.3"
+  }
 }
