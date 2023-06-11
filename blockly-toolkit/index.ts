@@ -1,1 +1,1 @@
-export { BlocklyToolkitView } from "./view"
+export { BlocklyToolkitView } from "./view";

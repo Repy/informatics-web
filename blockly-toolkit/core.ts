@@ -49,7 +49,11 @@ export class BlocklyToolkit {
     private dispatchEvent<K extends keyof BlocklyToolkitEventMap>(type: K, ev: BlocklyToolkitEventMap[K]): void {
         for (const listener of this.listeners) {
             if (listener.type === type) {
-                listener.listener.call(this, ev);
+                try {
+                    listener.listener.call(this, ev);
+                } catch (error) {
+                    console.error(error);
+                }
             }
         }
     }
@@ -68,26 +72,29 @@ export class BlocklyToolkit {
         if (this.isRunnning) return;
         const sleep = () => {
             return this.sleep();
-        }
+        };
         const highlightBlock = (id: string) => {
             this.highlightBlock(id);
-        }
+        };
         const consolelog = (msg: string) => {
             this.dispatchEvent("console", msg);
-        }
+        };
         var code = this.getCode("await sleep();\nhighlightBlock(%1);\n");
         code = code.replace(/window\.alert\(/g, 'consolelog(');
         this.highlightBlock(null);
-        consolelog("実行開始");
         this.isRunnning = true;
+        this.dispatchEvent("changestate", "runnning");
+        consolelog("実行開始");
         try {
             await eval("(async ()=>{" + code + "})();");
+            await sleep();
         } catch (e) {
             alert(e);
         }
-        this.isRunnning = false;
-        this.highlightBlock(null);
         consolelog("実行終了");
+        this.highlightBlock(null);
+        this.isRunnning = false;
+        this.dispatchEvent("changestate", "stopped");
     }
 
     private isRunnning = false;
@@ -99,7 +106,7 @@ export class BlocklyToolkit {
         return new Promise<void>((resolve, reject) => {
             setTimeout(() => {
                 if (!this.isRunnning) {
-                    reject("停止しました")
+                    reject("停止しました");
                 } else {
                     resolve();
                 }

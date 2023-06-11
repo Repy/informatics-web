@@ -1,6 +1,6 @@
 import { BlocklyToolkit } from "./core";
 import { UDFontTheme } from "./theme";
-import "./view.css"
+import "./view.css";
 
 export class BlocklyToolkitView {
     private readonly root: HTMLDivElement;
@@ -61,6 +61,12 @@ export class BlocklyToolkitView {
         this.toolkit.addEventListener("console", (log) => {
             this.outputData += log + "\n";
             this.output.value = this.outputData;
+        });
+        this.toolkit.addEventListener("changestate", (state) => {
+            if (state === "runnning") {
+                this.outputData = "";
+                this.output.value = this.outputData;
+            }
         });
 
         this.speedinput.valueAsNumber = 500;
