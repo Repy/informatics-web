@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2023-06-09T00:42:14.643Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36 Edg/113.0.1774.42" etag="AOfdu7AsGw_vlDVCkYMd" version="21.3.7" type="device">
+<mxfile host="app.diagrams.net" modified="2023-06-10T13:59:18.593Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.41" etag="f-nPRDoivOIq3K0vrz1k" version="21.3.8" type="device">
   <diagram name="ページ1" id="D5p3RVC4t98DR3PqROP9">
-    <mxGraphModel dx="1178" dy="786" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+    <mxGraphModel dx="794" dy="438" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -11,7 +11,7 @@
           <mxGeometry x="80" y="100" width="80" height="40" as="geometry" />
         </mxCell>
         <mxCell id="StKes1Bay4Hae8yV6QAt-2" value="終了" style="strokeWidth=2;shape=mxgraph.flowchart.terminator;fontFamily=BIZ UDPGothic;fontSize=16;" parent="1" vertex="1">
-          <mxGeometry x="90" y="340" width="60" height="30" as="geometry" />
+          <mxGeometry x="80" y="340" width="80" height="40" as="geometry" />
         </mxCell>
         <mxCell id="StKes1Bay4Hae8yV6QAt-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=BIZ UDPGothic;fontSize=16;" parent="1" source="StKes1Bay4Hae8yV6QAt-3" target="StKes1Bay4Hae8yV6QAt-4" edge="1">
           <mxGeometry relative="1" as="geometry" />

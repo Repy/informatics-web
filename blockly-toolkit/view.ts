@@ -63,6 +63,8 @@ export class BlocklyToolkitView {
             this.output.value = this.outputData;
         });
 
+        this.speedinput.valueAsNumber = 500;
+        this.toolkit.setSleepTime(this.speedinput.valueAsNumber);
         this.speedinput.addEventListener("change", () => {
             this.toolkit.setSleepTime(this.speedinput.valueAsNumber);
         }, false);
