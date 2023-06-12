@@ -1,0 +1,112 @@
+<mxfile host="65bd71144e" modified="2023-06-12T06:10:13.405Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.79.0 Chrome/108.0.5359.215 Electron/22.5.5 Safari/537.36" etag="Mb9vCA8_KbbW38eeZLWg" version="21.3.8" type="embed">
+    <diagram name="ページ1" id="D5p3RVC4t98DR3PqROP9">
+        <mxGraphModel dx="936" dy="558" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="StKes1Bay4Hae8yV6QAt-1" value="開始" style="strokeWidth=2;shape=mxgraph.flowchart.terminator;fontSize=16;fontFamily=BIZ UDPGothic;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="120" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="StKes1Bay4Hae8yV6QAt-2" value="maxを返す" style="strokeWidth=2;shape=mxgraph.flowchart.terminator;fontSize=16;fontFamily=BIZ UDPGothic;" parent="1" vertex="1">
+                    <mxGeometry x="585" y="320" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="StKes1Bay4Hae8yV6QAt-3" value="resultを表示する" style="rounded=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontSize=16;fontFamily=BIZ UDPGothic;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="380" width="260" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="9aM1dBj8owvEj4xOFZrg-10" value="配列の中で一番大きい数を出す関数" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontFamily=BIZ UDPGothic;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="40" width="480" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="D7fSjAbkDVPHjdvhgrvn-7" value="変数listに、新しいリストを作成" style="rounded=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontSize=16;fontFamily=BIZ UDPGothic;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="120" width="260" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="listの末尾に、10を挿入する&#xa;listの末尾に、29を挿入する&#xa;listの末尾に、12を挿入する&#xa;listの末尾に、40を挿入する" style="rounded=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontSize=16;fontFamily=BIZ UDPGothic;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="180" width="260" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="pZHUVyEk2EsDKcrGUSda-14" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=BIZ UDPGothic;fontSize=16;fontColor=default;endArrow=none;endFill=0;strokeWidth=3;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="20" y="810" as="targetPoint"/>
+                        <mxPoint x="20" y="100" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="pZHUVyEk2EsDKcrGUSda-3" value="メイン処理" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontFamily=BIZ UDPGothic;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="80" width="110" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="pZHUVyEk2EsDKcrGUSda-6" value="関数「一番大きい数(引数list)」を実行し、&#xa;変数resultに、結果を入れる" style="verticalLabelPosition=middle;verticalAlign=middle;shape=process;rounded=1;size=0.07142857142857142;arcSize=6;strokeWidth=2;labelPosition=center;align=center;fontFamily=BIZ UDPGothic;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="300" width="370" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="pZHUVyEk2EsDKcrGUSda-7" value="一番大きい数&#xa;引数: input" style="strokeWidth=2;shape=mxgraph.flowchart.terminator;fontSize=16;fontFamily=BIZ UDPGothic;" parent="1" vertex="1">
+                    <mxGeometry x="585" y="120" width="160" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="pZHUVyEk2EsDKcrGUSda-8" value="maxに、0を入れる" style="rounded=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontSize=16;fontFamily=BIZ UDPGothic;" parent="1" vertex="1">
+                    <mxGeometry x="780" y="120" width="240" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="pZHUVyEk2EsDKcrGUSda-9" value="indexに、1を入れる" style="rounded=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontSize=16;fontFamily=BIZ UDPGothic;" parent="1" vertex="1">
+                    <mxGeometry x="780" y="180" width="240" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="pZHUVyEk2EsDKcrGUSda-10" value="index≦inputの長さ" style="strokeWidth=2;shape=mxgraph.flowchart.loop_limit;fontFamily=BIZ UDPGothic;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="585" y="200" width="180" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="pZHUVyEk2EsDKcrGUSda-11" value="indexを、1増やす" style="rounded=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontSize=16;fontFamily=BIZ UDPGothic;" parent="1" vertex="1">
+                    <mxGeometry x="780" y="240" width="240" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="pZHUVyEk2EsDKcrGUSda-12" value="終了" style="strokeWidth=2;shape=mxgraph.flowchart.terminator;fontSize=16;fontFamily=BIZ UDPGothic;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="180" width="80" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="pZHUVyEk2EsDKcrGUSda-15" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=BIZ UDPGothic;fontSize=16;fontColor=default;endArrow=none;endFill=0;strokeWidth=3;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="20" y="810" as="targetPoint"/>
+                        <mxPoint x="540" y="810" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="pZHUVyEk2EsDKcrGUSda-16" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=BIZ UDPGothic;fontSize=16;fontColor=default;endArrow=none;endFill=0;strokeWidth=3;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="540" y="100" as="targetPoint"/>
+                        <mxPoint x="540" y="810" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="pZHUVyEk2EsDKcrGUSda-17" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=BIZ UDPGothic;fontSize=16;fontColor=default;endArrow=none;endFill=0;strokeWidth=3;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="540" y="100" as="targetPoint"/>
+                        <mxPoint x="160" y="99.6" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="pZHUVyEk2EsDKcrGUSda-18" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=BIZ UDPGothic;fontSize=16;fontColor=default;endArrow=none;endFill=0;strokeWidth=3;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="560" y="810" as="targetPoint"/>
+                        <mxPoint x="560" y="100" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="pZHUVyEk2EsDKcrGUSda-19" value="関数" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontFamily=BIZ UDPGothic;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" parent="1" vertex="1">
+                    <mxGeometry x="590" y="80" width="100" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="pZHUVyEk2EsDKcrGUSda-20" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=BIZ UDPGothic;fontSize=16;fontColor=default;endArrow=none;endFill=0;strokeWidth=3;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="560" y="810" as="targetPoint"/>
+                        <mxPoint x="1080" y="810" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="pZHUVyEk2EsDKcrGUSda-21" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=BIZ UDPGothic;fontSize=16;fontColor=default;endArrow=none;endFill=0;strokeWidth=3;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1080" y="100" as="targetPoint"/>
+                        <mxPoint x="1080" y="810" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="pZHUVyEk2EsDKcrGUSda-22" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=BIZ UDPGothic;fontSize=16;fontColor=default;endArrow=none;endFill=0;strokeWidth=3;movable=0;resizable=0;rotatable=0;deletable=0;editable=0;locked=1;connectable=0;" parent="1" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1080" y="100" as="targetPoint"/>
+                        <mxPoint x="700" y="99.6" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="pZHUVyEk2EsDKcrGUSda-23" value="max&lt;input[index]" style="strokeWidth=2;shape=mxgraph.flowchart.decision;strokeColor=default;fontFamily=BIZ UDPGothic;fontSize=16;fontColor=default;fillColor=default;" parent="1" vertex="1">
+                    <mxGeometry x="760" y="354" width="200" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="pZHUVyEk2EsDKcrGUSda-25" value="maxに、input[index]を入れる" style="rounded=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;fontSize=16;fontFamily=BIZ UDPGothic;" parent="1" vertex="1">
+                    <mxGeometry x="760" y="300" width="260" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="pZHUVyEk2EsDKcrGUSda-26" value="" style="strokeWidth=2;shape=mxgraph.flowchart.loop_limit;strokeColor=default;fontFamily=BIZ UDPGothic;fontSize=16;fontColor=default;fillColor=default;direction=west;" parent="1" vertex="1">
+                    <mxGeometry x="585" y="260" width="180" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
