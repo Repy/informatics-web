@@ -1,5 +1,17 @@
 /**
  * @license
+ * Copyright (c) 2023 Reiji Terasaka
+ * SPDX-License-Identifier: MIT
+ */
+
+/**
+ * @license
+ * Copyright 2012 Marijn Haverbeke,
+ * SPDX-License-Identifier: MIT
+ */
+
+/**
+ * @license
  * Copyright 2019 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
