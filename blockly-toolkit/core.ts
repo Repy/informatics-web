@@ -1,3 +1,9 @@
+/**
+ * @license
+ * Copyright (c) 2023 Reiji Terasaka
+ * SPDX-License-Identifier: MIT
+ */
+
 import Blockly from "blockly";
 import { } from 'blockly/blocks';
 import { javascriptGenerator } from 'blockly/javascript';

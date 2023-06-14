@@ -1,3 +1,9 @@
+/**
+ * @license
+ * Copyright (c) 2023 Reiji Terasaka
+ * SPDX-License-Identifier: MIT
+ */
+
 import { BlocklyToolkit } from "./core";
 import { UDFontTheme } from "./theme";
 import "./view.css";
