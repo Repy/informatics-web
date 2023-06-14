@@ -1,19 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=BIZ+UDPGothic:400,700');
 
 @font-face {
-    font-family: "Local BIZ UDPGothic";
-    src: local("BIZ UDPGothic");
+    font-family: 'Web BIZ UDPGothic';
+    font-style: normal;
     font-weight: 400;
+    src: url(./fonts/BIZUDPGothic-Regular.woff2) format('woff2');
 }
 
 @font-face {
-    font-family: "Local BIZ UDPGothic";
-    src: local("BIZ UDPGothic Bold");
+    font-family: 'Web BIZ UDPGothic';
+    font-style: normal;
     font-weight: 700;
+    src: url(./fonts/BIZUDPGothic-Bold.woff2) format('woff2');
 }
 
 * {
-    font-family: "Local BIZ UDPGothic", "BIZ UDPGothic", sans-serif;
+    font-family: "BIZ UDPGothic", "Web BIZ UDPGothic", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
