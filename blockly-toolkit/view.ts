@@ -6,7 +6,6 @@
 
 import { BlocklyToolkit } from "./core";
 import { UDFontTheme } from "./theme";
-import "./view.css";
 
 export class BlocklyToolkitView {
     private readonly root: HTMLDivElement;

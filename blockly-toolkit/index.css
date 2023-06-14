@@ -4,19 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-@import url('https://fonts.googleapis.com/css?family=BIZ+UDPGothic:400,700');
-
-@font-face {
-    font-family: "Local BIZ UDPGothic";
-    src: local("BIZ UDPGothic");
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: "Local BIZ UDPGothic";
-    src: local("BIZ UDPGothic Bold");
-    font-weight: 700;
-}
+@import url(../fonts/fonts.css);
 
 .BlocklyToolkitView {
     position: absolute;
@@ -27,7 +15,7 @@
 }
 
 .BlocklyToolkitView * {
-    font-family: "Local BIZ UDPGothic", "BIZ UDPGothic", sans-serif !important;
+    font-family: "BIZ UDPGothic", "Web BIZ UDPGothic", sans-serif !important;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;

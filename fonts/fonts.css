@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Web BIZ UDPGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url(./BIZUDPGothic-Regular.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Web BIZ UDPGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url(./BIZUDPGothic-Bold.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Web BIZ UDGothic';
+    font-style: normal;
+    font-weight: 400;
+    src: url(./BIZUDGothic-Regular.woff2) format('woff2');
+}
+
+@font-face {
+    font-family: 'Web BIZ UDGothic';
+    font-style: normal;
+    font-weight: 700;
+    src: url(./BIZUDGothic-Bold.woff2) format('woff2');
+}
