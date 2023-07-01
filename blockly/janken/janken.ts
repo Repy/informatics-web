@@ -37,7 +37,7 @@ export const CustomBlock: BlocklyToolkitCustomBlock[] = [
             this.appendDummyInput()
                 .appendField("ランダムで手を決定する");
             this.setOutput(true, "String");
-            this.setColour(230);
+            this.setStyle('text_blocks');
             this.setTooltip("");
             this.setHelpUrl("");
         },
@@ -66,7 +66,7 @@ export const CustomBlock: BlocklyToolkitCustomBlock[] = [
             this.appendDummyInput()
                 .appendField("ボタン入力を受け付ける");
             this.setOutput(true, "String");
-            this.setColour(230);
+            this.setStyle('text_blocks');
             this.setTooltip("");
             this.setHelpUrl("");
         },
@@ -75,17 +75,18 @@ export const CustomBlock: BlocklyToolkitCustomBlock[] = [
             while (true) {
                 window.sleepFunc();
                 var userButtonInputAAA = window.getUserButtonInput();
-                if (userButtonInputAAA !== "") return userButtonInputAAA;
+                if (userButtonInputAAA) return userButtonInputAAA;
             }
         })()`, generator.ORDER_ADDITION];
         },
         interpreterInitFunc(interpreter, globalObject, context) {
-            window.userButtonInput = "";
             interpreter.setProperty(globalObject, "sleepFunc", interpreter.createNativeFunction(() => {
                 context.sleepTime = 100;
             }));
             interpreter.setProperty(globalObject, "getUserButtonInput", interpreter.createNativeFunction(() => {
-                return window.userButtonInput;
+                const tmp = window.userButtonInput;
+                window.userButtonInput = "";
+                return tmp;
             }));
         },
     },
@@ -108,7 +109,7 @@ export const CustomBlock: BlocklyToolkitCustomBlock[] = [
             this.setInputsInline(true);
             this.setPreviousStatement(true, null);
             this.setNextStatement(true, null);
-            this.setColour(210);
+            this.setStyle('logic_blocks');
             this.setTooltip("");
             this.setHelpUrl("");
         },
@@ -139,7 +140,7 @@ export const CustomBlock: BlocklyToolkitCustomBlock[] = [
             this.setInputsInline(true);
             this.setPreviousStatement(true, null);
             this.setNextStatement(true, null);
-            this.setColour(160);
+            this.setStyle('text_blocks');
             this.setTooltip("");
             this.setHelpUrl("");
         },
@@ -164,7 +165,7 @@ export const CustomBlock: BlocklyToolkitCustomBlock[] = [
             this.setInputsInline(true);
             this.setPreviousStatement(true, null);
             this.setNextStatement(true, null);
-            this.setColour(160);
+            this.setStyle('text_blocks');
             this.setTooltip("");
             this.setHelpUrl("");
         },
