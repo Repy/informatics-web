@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-import { BlocklyToolkit } from "./core";
+import { BlocklyToolkit, BlocklyToolkitCustomBlock } from "./core";
 import { Dialog } from "./dialog";
 import { UDFontTheme } from "./theme";
 import { CE } from "./util";
@@ -12,8 +12,9 @@ import { CE } from "./util";
 export type BlocklyToolkitViewSetting = {
     OutputJavaScript?: boolean;
 };
+
 export class BlocklyToolkitView {
-    constructor(el: HTMLElement, toolboxJson: any, setting?: BlocklyToolkitViewSetting) {
+    constructor(el: HTMLElement, toolboxJson: any, setting?: BlocklyToolkitViewSetting, customBlock?: BlocklyToolkitCustomBlock[]) {
         let outputData: string = "";
 
         const blocklyDiv = CE("div", {
@@ -101,8 +102,7 @@ export class BlocklyToolkitView {
             ])
         );
 
-        const toolkit = new BlocklyToolkit(blocklyDiv, toolboxJson, UDFontTheme);
-
+        const toolkit = new BlocklyToolkit(blocklyDiv, toolboxJson, UDFontTheme, customBlock);
 
         toolkit.addEventListener("console", (log) => {
             outputData += log + "\n";

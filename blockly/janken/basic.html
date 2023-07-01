@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockly</title>
+    <script src="../../blockly-toolkit/index.js"></script>
+    <link rel="stylesheet" href="../../blockly-toolkit/index.css">
+
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        #blockly {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 300px;
+        }
+
+        #viewport {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+        }
+
+        #viewport #comImg {
+            position: absolute;
+            top: 0;
+            left: 50px;
+            right: 50px;
+            height: 200px;
+        }
+
+        #viewport #userImg {
+            position: absolute;
+            top: 200px;
+            left: 50px;
+            right: 50px;
+            height: 200px;
+        }
+
+        #viewport #button {
+            position: absolute;
+            top: 400px;
+            left: 50px;
+            right: 50px;
+        }
+
+        #viewport #button button {
+            padding: 0;
+        }
+
+        #viewport #button button img {
+            height: 50px;
+            width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="blockly"></div>
+    <div id="viewport">
+        <img id="comImg" src="./gu.svg">
+        <img id="userImg" src="./gu.svg">
+        <div id="button">
+            <button id="button1"><img src="./gu.svg"></button>
+            <button id="button2"><img src="./choki.svg"></button>
+            <button id="button3"><img src="./pa.svg"></button>
+        </div>
+    </div>
+    <script src="./janken.js"></script>
+    <script>
+        new BlocklyToolkitView(
+            document.getElementById("blockly"),
+            {
+                "kind": "flyoutToolbox",
+                "contents": [
+                    {
+                        "kind": "block",
+                        "type": "variables_set",
+                        "fields": {
+                            "VAR": {
+                                "name": "コンピュータの手",
+                                "type": "String"
+                            }
+                        }
+                    },
+                    {
+                        "kind": "block",
+                        "type": "variables_set",
+                        "fields": {
+                            "VAR": {
+                                "name": "あなたの手",
+                                "type": "String"
+                            }
+                        }
+                    },
+                    {
+                        "kind": "block",
+                        "type": "variables_get",
+                        "fields": {
+                            "VAR": {
+                                "name": "コンピュータの手",
+                                "type": "String"
+                            }
+                        }
+                    },
+                    {
+                        "kind": "block",
+                        "type": "variables_get",
+                        "fields": {
+                            "VAR": {
+                                "name": "あなたの手",
+                                "type": "String"
+                            }
+                        }
+                    },
+                    {
+                        "kind": "block",
+                        "type": "janken_show_com",
+                    },
+                    {
+                        "kind": "block",
+                        "type": "janken_show_user",
+                    },
+                    {
+                        "kind": "block",
+                        "type": "janken_rand",
+                    },
+                    {
+                        "kind": "block",
+                        "type": "janken_user",
+                    },
+                    {
+                        "kind": "block",
+                        "type": "janken_if",
+                        "fields": {
+                            "VAR": {
+                                "name": "あなたの手",
+                                "type": "String",
+                            }
+                        }
+                    },
+                    {
+                        "kind": "block",
+                        "type": "text_print",
+                        "inputs": {
+                            "TEXT": {
+                                "block": {
+                                    "type": "text",
+                                    "fields": {
+                                        "TEXT": ""
+                                    }
+                                }
+                            }
+                        }
+                    },
+                ],
+            },
+            {},
+            CustomBlock
+        );
+    </script>
+</body>
+
+</html>

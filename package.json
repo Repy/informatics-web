@@ -15,7 +15,7 @@
   },
   "browser": [],
   "dependencies": {
-    "@blockly/theme-highcontrast": "^3.0.10",
-    "blockly": "^9.3.3"
+    "@blockly/theme-highcontrast": "^4.0.0",
+    "blockly": "^10.0.0"
   }
 }

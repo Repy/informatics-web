@@ -4,11 +4,12 @@
  * SPDX-License-Identifier: MIT
  */
 
-import Blockly from "blockly";
+import Blockly, { BlocklyOptions } from "blockly";
 import { } from 'blockly/blocks';
 import { javascriptGenerator } from 'blockly/javascript';
 import * as JA from 'blockly/msg/ja';
 import { Interpreter } from "./interpreter/interpreter";
+import { sleep } from "./util";
 
 const options = {
     types: [
@@ -31,25 +32,39 @@ interface BlocklyToolkitEventListener<K extends keyof BlocklyToolkitEventMap> {
     listener: (this: BlocklyToolkit, ev: BlocklyToolkitEventMap[K]) => void;
 }
 
-async function sleep(sleepTime: number) {
-    return new Promise<void>((resolve) => {
-        setTimeout(() => {
-            resolve();
-        }, sleepTime);
-    });
+export type BlocklyToolkitInterpreterContext = {
+    sleepTime: number;
+};
+export type BlocklyToolkitCustomBlock = {
+    name: string,
+    init: (this: Blockly.Block) => void,
+    codeGenerator: (block: Blockly.Block, generator: any) => string | [string, number],
+    interpreterInitFunc: (interpreter: Interpreter, globalObject: Window, context: BlocklyToolkitInterpreterContext) => void,
 };
 
 export class BlocklyToolkit {
     private workspace: Blockly.WorkspaceSvg;
-    constructor(view: Element | string, toolboxJson: any, theme: Blockly.Theme) {
+    private customBlock: BlocklyToolkitCustomBlock[];
+
+    constructor(view: Element | string, toolboxJson: any, theme: Blockly.Theme, customBlock?: BlocklyToolkitCustomBlock[]) {
+        Blockly.setLocale(JA);
+        this.customBlock = customBlock || [];
+        for (const b of this.customBlock) {
+            Blockly.Blocks[b.name] = {
+                init: b.init,
+            };
+            javascriptGenerator.forBlock[b.name] = b.codeGenerator;
+        }
         this.workspace = Blockly.inject(view, {
             toolbox: toolboxJson,
             theme: theme,
+            trashcan: true,
+            scrollbars: true,
         });
         javascriptGenerator.addReservedWords('highlightBlock');
-        Blockly.setLocale(JA);
-
+        javascriptGenerator.addReservedWords('sleepBlock');
     }
+
     private highlightBlock(id: string | null) {
         this.workspace.highlightBlock(id);
     };
@@ -83,8 +98,8 @@ export class BlocklyToolkit {
     public async run() {
         if (this.isRunnning) return;
         var code = this.getCode("highlightBlock(%1);\n");
-        let pause = false;
-        const myInterpreter = new Interpreter(code, (interpreter: any, globalObject: Window) => {
+        const context: BlocklyToolkitInterpreterContext = { sleepTime: 0 };
+        const myInterpreter = new Interpreter(code, (interpreter, globalObject) => {
             const wrapperAlert = (msg: string) => {
                 this.dispatchEvent("console", msg);
             };
@@ -95,12 +110,15 @@ export class BlocklyToolkit {
             };
             interpreter.setProperty(globalObject, 'prompt', interpreter.createNativeFunction(wrapperPrompt));
 
-            // Add an API function for highlighting blocks.
             const wrapperHighlight = (id: string) => {
                 this.highlightBlock(id);
-                pause = true;
+                context.sleepTime = this.sleepTime;
             };
             interpreter.setProperty(globalObject, 'highlightBlock', interpreter.createNativeFunction(wrapperHighlight));
+
+            for (const b of this.customBlock) {
+                b.interpreterInitFunc(interpreter, globalObject, context);
+            }
         });
         this.highlightBlock(null);
         this.isRunnning = true;
@@ -112,16 +130,16 @@ export class BlocklyToolkit {
                 if (!next) {
                     break;
                 }
-                if (pause) {
-                    pause = false;
-                    await this.sleep();
+                if (context.sleepTime > 0) {
+                    await sleep(context.sleepTime);
+                    context.sleepTime = 0;
                     if (!this.isRunnning) {
                         this.dispatchEvent("console", "強制終了");
                         break;
                     }
                 }
             }
-            await this.sleep();
+            await sleep(this.sleepTime);
         } catch (e) {
             alert(e);
         }
@@ -135,10 +153,6 @@ export class BlocklyToolkit {
     public stop() {
         this.isRunnning = false;
     }
-
-    private sleep() {
-        return sleep(this.sleepTime);
-    };
 
     public async save() {
         const text = JSON.stringify(Blockly.serialization.workspaces.save(this.workspace));

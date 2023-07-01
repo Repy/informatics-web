@@ -31,3 +31,11 @@ export function CE<T extends keyof HTMLElementTagNameMap>(
     }
     return tag;
 }
+
+export async function sleep(sleepTime: number) {
+    return new Promise<void>((resolve) => {
+        setTimeout(() => {
+            resolve();
+        }, sleepTime);
+    });
+};
