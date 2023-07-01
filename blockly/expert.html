@@ -27,30 +27,38 @@
             "contents": [
                 {
                     "kind": "category",
+                    "name": "論理演算",
+                    "categorystyle": "logic_category",
+                    "contents": [
+                        {
+                            "kind": "block",
+                            "type": "logic_boolean",
+                            "fields": {
+                                "BOOL": "TRUE",
+                            }
+                        },
+                        {
+                            "kind": "block",
+                            "type": "logic_compare"
+                        },
+                        {
+                            "kind": "block",
+                            "type": "logic_negate"
+                        },
+                        {
+                            "kind": "block",
+                            "type": "logic_operation"
+                        },
+                    ]
+                },
+                {
+                    "kind": "category",
                     "name": "分岐",
                     "categorystyle": "logic_category",
                     "contents": [
                         {
                             "kind": "block",
-                            "type": "logic_compare",
-                            "inputs": {
-                                "A": {
-                                    "shadow": {
-                                        "type": "math_number",
-                                        "fields": {
-                                            "NUM": 1
-                                        }
-                                    }
-                                },
-                                "B": {
-                                    "shadow": {
-                                        "type": "math_number",
-                                        "fields": {
-                                            "NUM": 1
-                                        }
-                                    }
-                                }
-                            }
+                            "type": "logic_compare"
                         },
                         {
                             "kind": "block",
@@ -59,24 +67,6 @@
                                 "IF0": {
                                     "block": {
                                         "type": "logic_compare",
-                                        "inputs": {
-                                            "A": {
-                                                "shadow": {
-                                                    "type": "math_number",
-                                                    "fields": {
-                                                        "NUM": 1
-                                                    }
-                                                }
-                                            },
-                                            "B": {
-                                                "shadow": {
-                                                    "type": "math_number",
-                                                    "fields": {
-                                                        "NUM": 1
-                                                    }
-                                                }
-                                            }
-                                        }
                                     }
                                 },
                             },
@@ -91,24 +81,6 @@
                                 "IF0": {
                                     "block": {
                                         "type": "logic_compare",
-                                        "inputs": {
-                                            "A": {
-                                                "shadow": {
-                                                    "type": "math_number",
-                                                    "fields": {
-                                                        "NUM": 1
-                                                    }
-                                                }
-                                            },
-                                            "B": {
-                                                "shadow": {
-                                                    "type": "math_number",
-                                                    "fields": {
-                                                        "NUM": 1
-                                                    }
-                                                }
-                                            }
-                                        }
                                     }
                                 },
                             },
@@ -130,27 +102,17 @@
                                 "BOOL": {
                                     "block": {
                                         "type": "logic_compare",
-                                        "inputs": {
-                                            "A": {
-                                                "shadow": {
-                                                    "type": "math_number",
-                                                    "fields": {
-                                                        "NUM": 1
-                                                    }
-                                                }
-                                            },
-                                            "B": {
-                                                "shadow": {
-                                                    "type": "math_number",
-                                                    "fields": {
-                                                        "NUM": 1
-                                                    }
-                                                }
-                                            }
-                                        }
                                     }
                                 },
                             },
+                        },
+                        {
+                            "kind": "block",
+                            "type": "controls_for",
+                        },
+                        {
+                            "kind": "block",
+                            "type": "controls_forEach"
                         },
                         {
                             "kind": "block",
@@ -165,51 +127,39 @@
                     "contents": [
                         {
                             "kind": "block",
-                            "type": "math_number",
+                            "type": "math_number"
                         },
                         {
                             "kind": "block",
-                            "type": "math_arithmetic",
-                            "inputs": {
-                                "A": {
-                                    "shadow": {
-                                        "type": "math_number",
-                                        "fields": {
-                                            "NUM": 1
-                                        }
-                                    }
-                                },
-                                "B": {
-                                    "shadow": {
-                                        "type": "math_number",
-                                        "fields": {
-                                            "NUM": 1
-                                        }
-                                    }
-                                }
-                            }
+                            "type": "math_arithmetic"
                         },
                         {
                             "kind": "block",
-                            "type": "math_modulo",
-                            "inputs": {
-                                "DIVIDEND": {
-                                    "shadow": {
-                                        "type": "math_number",
-                                        "fields": {
-                                            "NUM": 1
-                                        }
-                                    }
-                                },
-                                "DIVISOR": {
-                                    "shadow": {
-                                        "type": "math_number",
-                                        "fields": {
-                                            "NUM": 1
-                                        }
-                                    }
-                                }
-                            }
+                            "type": "math_modulo"
+                        },
+                        {
+                            "kind": "block",
+                            "type": "math_random_float"
+                        },
+                        {
+                            "kind": "block",
+                            "type": "math_random_int"
+                        },
+                        {
+                            "kind": "block",
+                            "type": "math_trig"
+                        },
+                        {
+                            "kind": "block",
+                            "type": "math_round"
+                        },
+                        {
+                            "kind": "block",
+                            "type": "math_constant"
+                        },
+                        {
+                            "kind": "block",
+                            "type": "math_single"
                         },
                     ]
                 },
@@ -285,7 +235,7 @@
                     "custom": "PROCEDURE",
                 },
             ]
-        });
+        },{OutputJavaScript:true});
     </script>
 </body>
 
