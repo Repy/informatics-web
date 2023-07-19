@@ -20,6 +20,7 @@ const userImg = <HTMLImageElement>document.getElementById("userImg");
 const button1 = <HTMLButtonElement>document.getElementById("button1");
 const button2 = <HTMLButtonElement>document.getElementById("button2");
 const button3 = <HTMLButtonElement>document.getElementById("button3");
+const textdiv = <HTMLDivElement>document.getElementById("text");
 button1.addEventListener("click", () => {
     window.userButtonInput = "GU";
 });
@@ -176,6 +177,34 @@ export const CustomBlock: BlocklyToolkitCustomBlock[] = [
         interpreterInitFunc(interpreter, globalObject, context) {
             interpreter.setProperty(globalObject, "setUserImgSrc", interpreter.createNativeFunction((val: string) => {
                 userImg.src = "./" + val + ".svg";
+            }));
+        },
+    },
+    {
+        name: "janken_show_text",
+        init() {
+            this.appendValueInput("VAL")
+                .setCheck("String")
+                .appendField("画面に");
+            this.appendDummyInput()
+                .appendField("と表示");
+            this.setInputsInline(true);
+            this.setPreviousStatement(true, null);
+            this.setNextStatement(true, null);
+            this.setStyle('text_blocks');
+            this.setTooltip("");
+            this.setHelpUrl("");
+        },
+        codeGenerator(block, generator) {
+            var value_val = generator.valueToCode(block, 'VAL', generator.ORDER_ATOMIC);
+            return `window.showText(${value_val});window.sleepFunc2();window.showText(null);`;
+        },
+        interpreterInitFunc(interpreter, globalObject, context) {
+            interpreter.setProperty(globalObject, "showText", interpreter.createNativeFunction((val: string) => {
+                textdiv.textContent = val;
+            }));
+            interpreter.setProperty(globalObject, "sleepFunc2", interpreter.createNativeFunction(() => {
+                context.sleepTime = 2000;
             }));
         },
     },
