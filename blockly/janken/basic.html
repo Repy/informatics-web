@@ -156,6 +156,16 @@
                         "type": "janken_if",
                         "fields": {
                             "VAR": {
+                                "name": "コンピュータの手",
+                                "type": "String",
+                            }
+                        }
+                    },
+                    {
+                        "kind": "block",
+                        "type": "janken_if",
+                        "fields": {
+                            "VAR": {
                                 "name": "あなたの手",
                                 "type": "String",
                             }
@@ -174,6 +184,28 @@
                                 }
                             }
                         }
+                    },
+                    {
+                        "kind": "block",
+                        "type": "controls_whileUntil",
+                        "fields": {
+                            "MODE": "WHILE",
+                        },
+                        "inputs": {
+                            "BOOL": {
+                                "block":
+                                {
+                                    "type": "logic_boolean",
+                                    "fields": {
+                                        "BOOL": "TRUE",
+                                    }
+                                },
+                            },
+                        },
+                    },
+                    {
+                        "kind": "block",
+                        "type": "controls_flow_statements"
                     },
                 ],
             },
