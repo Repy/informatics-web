@@ -31,8 +31,13 @@
         <div> R <input title="R" type="range" id="r" min="0" max="255"></input> <span id="rt"></span></div>
         <div> G <input title="G" type="range" id="g" min="0" max="255"></input> <span id="gt"></span></div>
         <div> B <input title="B" type="range" id="b" min="0" max="255"></input> <span id="bt"></span></div>
+        <div> CSSカラーコード: <span id="cs"></span> </div>
     </main>
     <script>
+        function toHex(num) {
+            return Number(num).toString(16).padStart(2, '0');
+        }
+
         function binOutput(arr) {
             return out;
         }
@@ -44,6 +49,7 @@
         const rt = document.getElementById("rt");
         const gt = document.getElementById("gt");
         const bt = document.getElementById("bt");
+        const cs = document.getElementById("cs");
 
         r.value = 0;
         g.value = 0;
@@ -52,8 +58,9 @@
         function change(rgb, rgbt) {
             return () => {
                 rgbt.textContent = rgb.value;
-                const text = "rgb(" + r.value + "," + g.value + "," + b.value + ")";
+                const text = "#" + toHex(r.value) + toHex(g.value) + toHex(b.value);
                 area.style.backgroundColor = text;
+                cs.textContent = text;
             };
         }
 
