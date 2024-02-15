@@ -83,6 +83,8 @@
 
             var drag = false;
             var size = 50;
+            var startX = 0;
+            var startY = 0;
             var x = 100 * index + 50;
             var y = 50;
             var exec = function () {
@@ -95,11 +97,15 @@
             };
             div.addEventListener("mousedown", function (e) {
                 drag = true;
+                startX = e.screenX;
+                startY = e.screenY;
             }, false);
             window.addEventListener("mousemove", function (e) {
                 if (drag) {
-                    x += e.movementX;
-                    y += e.movementY;
+                    x += e.screenX - startX;
+                    y += e.screenY - startY;
+                    startX = e.screenX;
+                    startY = e.screenY;
                     exec();
                 }
             }, false);
