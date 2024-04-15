@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSA演習</title>
+    <link rel="stylesheet" href="../index.css">
+</head>
+
+<body>
+    <header>
+        <h1>RSA演習</h1>
+    </header>
+    <main>
+        <h3>素数生成</h3>
+        <p><input type="number" id="inputSosuu" value="30" /><button id="buttonSosuu">生成</button></p>
+        <p><span id="viewSosuu"></span></p>
+        <h3>Step1 2つの素数選択</h3>
+        <p>
+            p = <input type="number" id="p" value="17" /><br>
+            q = <input type="number" id="q" value="19" /><br>
+            N = <span id="n"></span><br>
+            N' = <span id="n2"></span><br>
+            <button id="step1">決定</button>
+        </p>
+        
+        <h3>Step2 eを選択</h3>
+        <p>
+            eにできる数は <span id="ePre"></span> です。<br>
+            e = <input type="number" id="e" value="67" /><br>
+            dにできる数は <span id="dPre"></span> です。<br>
+            <button id="step2">決定</button>
+        </p>
+
+        <h3>暗号化/復号</h3>
+        <p>
+            <input type="number" id="exev" value="5" />の
+            <input type="number" id="exeexp" value="67" />乗を
+            <input type="number" id="exemod" value="323" />で割った余りを計算<br>
+            <button id="exebutton">実行</button>
+            結果: <span id="exeout"></span><br>
+        </p>
+
+    </main>
+    <script>
+        function isSosuu(i) {
+            if (i % 1 !== 0) {
+                return false;
+            }
+            if (i % 2 === 0) {
+                return false;
+            }
+            for (var index = 3; index < i; index += 2) {
+                if (i % index === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function isTagainiSo(i1, i2) {
+            if (i1 % 2 === 0 && i2 % 2 === 0) {
+                return false;
+            }
+            for (var index = 3; index <= i1; index += 2) {
+                if (i1 % index === 0 && i2 % index === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function getSosuu(count) {
+            var ret = [];
+            for (var index = 2; index < Number.MAX_SAFE_INTEGER && ret.length < count; index++) {
+                if (isSosuu(index)) {
+                    ret.push(index);
+                }
+            }
+            return ret;
+        }
+
+        function getTagainiSo(n2v) {
+            var ret = [];
+            for (var index = 2; index < n2v; index++) {
+                if (isTagainiSo(n2v, index)) {
+                    ret.push(index);
+                }
+            }
+            return ret;
+        }
+
+        function expmod(i, exp, mod) {
+            var ret = 1;
+            for (var index = 0; index < exp; index++) {
+                ret = (ret * i) % mod;
+            }
+            return ret;
+        }
+
+
+        const buttonSosuu = document.getElementById("buttonSosuu");
+        const inputSosuu = document.getElementById("inputSosuu");
+        const viewSosuu = document.getElementById("viewSosuu");
+        buttonSosuu.addEventListener("click", () => {
+            const value = Number(inputSosuu.value);
+            const sosuu = getSosuu(value);
+            viewSosuu.textContent = sosuu.join(", ");
+        }, false);
+        const p = document.getElementById("p");
+        const q = document.getElementById("q");
+        const n = document.getElementById("n");
+        const n2 = document.getElementById("n2");
+        const ePre = document.getElementById("ePre");
+        const step1 = document.getElementById("step1");
+        function step1Exec() {
+            const pv = Number(p.value);
+            const qv = Number(q.value);
+            if (!isSosuu(pv) || !isSosuu(qv)) {
+                alert("素数ではない");
+                return;
+            }
+            const nv = pv * qv;
+            const n2v = (pv - 1) * (qv - 1);
+            n.textContent = `${pv} * ${qv} = ${nv}`;
+            n2.textContent = `(${pv} - 1) * (${qv} - 1) = ${n2v}`;
+
+            ePre.textContent = getTagainiSo(n2v).join(", ");
+        }
+        step1.addEventListener("click", step1Exec, false);
+
+        const e = document.getElementById("e");
+        const dPre = document.getElementById("dPre");
+        const step2 = document.getElementById("step2");
+
+        function step2Exec() {
+            const pv = Number(p.value);
+            const qv = Number(q.value);
+            const nv = pv * qv;
+            const n2v = (pv - 1) * (qv - 1);
+            const ev = Number(e.value);
+
+            var ret = [];
+            let now = 0;
+            for (let index = 1; index < nv; index++) {
+                now = ((now + ev) % n2v);
+                if (now === 1) {
+                    ret.push(index);
+                }
+            }
+            dPre.textContent = ret.join(", ");
+        }
+        step2.addEventListener("click", step2Exec, false);
+
+        const exev = document.getElementById("exev");
+        const exeexp = document.getElementById("exeexp");
+        const exemod = document.getElementById("exemod");
+        const exebutton = document.getElementById("exebutton");
+        const exeout = document.getElementById("exeout");
+        exebutton.addEventListener("click", () => {
+            const v = Number(exev.value);
+            const exp = Number(exeexp.value);
+            const mod = Number(exemod.value);
+            exeout.textContent = expmod(v, exp, mod);
+        }, false);
+
+    </script>
+</body>
+
+</html>
